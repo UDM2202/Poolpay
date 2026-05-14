@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+body {
+  background: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+@theme {
+  --color-dark: #0a0a0f;
+  --color-card: #12121a;
+  --color-border: #1a1a2e;
+  --color-green: #00ff88;
+  --color-blue: #00aaff;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00ff88, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  background: #12121a;
+  border: 1px solid #1a1a2e;
+  border-radius: 12px;
+}
+
+.glow {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(0, 255, 136, 0.3); }
+  50% { border-color: #00ff88; }
+}
+
+.streaming {
+  animation: pulse-border 2s infinite;
+}

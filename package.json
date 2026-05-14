@@ -1,0 +1,35 @@
+{
+  "name": "0g-infer",
+  "version": "1.0.0",
+  "description": "One call. Priced. Verified. Cached. Revenue-shared. The AI inference protocol.",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:node\" \"npm run dev:frontend\"",
+    "dev:node": "npx hardhat node",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:sdk": "cd sdk && npx tsx examples/basic-inference.ts",
+    "build": "cd frontend && npm run build",
+    "deploy": "npx hardhat run scripts/deploy.ts --network hardhat",
+    "compile": "npx hardhat compile",
+    "cli": "cd sdk && npx tsx cli.ts",
+    "start": "cd frontend && npm run preview",
+    "agent": "npx tsx agents/server.ts",
+"agent:test": "npx tsx test-agent.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@types/node": "^22.0.0",
+    "concurrently": "^8.0.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.0.0",
+    "ethers": "^6.0.0",
+    "express": "^5.2.1",
+    "viem": "^2.48.11"
+  }
+}
