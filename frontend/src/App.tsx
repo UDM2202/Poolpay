@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { Send, Zap, Shield, Database, Copy, Check, Terminal, Globe, Bot } from "lucide-react"
+import { Send, Zap, Shield, Copy, Check, Terminal, Globe, Bot } from "lucide-react"
 import { useAccount, useSendTransaction, useBalance } from "wagmi"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { parseEther, formatEther } from "viem"
@@ -174,7 +174,8 @@ export default function App() {
           to: CONTRACT_ADDRESS as `0x${string}`,
           value: parseEther("1"),
         })
-        txHash = result as string
+        txHash = result as unknown as string
+
         costPaid = true
         setTxStatus("TX confirmed!")
       } catch {
