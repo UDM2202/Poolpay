@@ -6,13 +6,13 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:node\" \"npm run dev:frontend\"",
     "dev:node": "npx hardhat node",
-    "dev:frontend": "cd frontend && npm run dev",
+    "dev:frontend": "cd frontend && npm install && npm run build",
     "dev:sdk": "cd sdk && npx tsx examples/basic-inference.ts",
     "build": "cd frontend && npm run build",
     "deploy": "npx hardhat run scripts/deploy.ts --network hardhat",
     "compile": "npx hardhat compile",
     "cli": "cd sdk && npx tsx cli.ts",
-    "start": "cd frontend && npm run preview",
+    "start": "npm run agent",
     "agent": "npx tsx agents/server.ts",
 "agent:test": "npx tsx test-agent.ts"
   },

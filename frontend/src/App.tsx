@@ -124,7 +124,7 @@ export default function App() {
   const { data: balance } = useBalance({ address })
 
   const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || "0x087dCA8ef455837c40E89fa093450A105fBaA0EF"
-  const AGENT_API = "http://localhost:3001/api"
+  const AGENT_API = "poolpay-production-sdk.up.railway.app"
 
   useEffect(() => {
     if (responseRef.current) responseRef.current.scrollTop = responseRef.current.scrollHeight
