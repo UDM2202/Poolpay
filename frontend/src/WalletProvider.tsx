@@ -3,9 +3,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RainbowKitProvider, getDefaultConfig, darkTheme } from "@rainbow-me/rainbowkit"
 import "@rainbow-me/rainbowkit/styles.css"
 
-const zeroG = {
+const zeroGMainnet = {
   id: 16661,
-  name: "0G Network",
+  name: "0G Mainnet",
   network: "0g-mainnet",
   iconUrl: "https://0g.ai/favicon.ico",
   nativeCurrency: { name: "0G", symbol: "0G", decimals: 18 },
@@ -18,12 +18,29 @@ const zeroG = {
   },
 } as const
 
+const zeroGTestnet = {
+  id: 16600,
+  name: "0G Testnet",
+  network: "0g-testnet",
+  iconUrl: "https://0g.ai/favicon.ico",
+  nativeCurrency: { name: "0G", symbol: "0G", decimals: 18 },
+  rpcUrls: {
+    default: { http: ["https://evmrpc-testnet.0g.ai"] },
+    public: { http: ["https://evmrpc-testnet.0g.ai"] },
+  },
+  blockExplorers: {
+    default: { name: "0G Testnet Explorer", url: "https://chainscan-newton.0g.ai" },
+  },
+  testnet: true,
+} as const
+
 const config = getDefaultConfig({
   appName: "0G Infer SDK",
   projectId: "0g-infer-demo",
-  chains: [zeroG],
+  chains: [zeroGMainnet, zeroGTestnet],
   transports: {
-    [zeroG.id]: http("https://evmrpc.0g.ai"),
+    [zeroGMainnet.id]: http("https://evmrpc.0g.ai"),
+    [zeroGTestnet.id]: http("https://evmrpc-testnet.0g.ai"),
   },
 })
 
@@ -40,3 +57,5 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     </WagmiProvider>
   )
 }
+
+export { zeroGMainnet, zeroGTestnet }
