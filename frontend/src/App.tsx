@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { Send, Zap, Shield, Copy, Check, Terminal, Globe, Bot, Menu, X } from "lucide-react"
+import { Send, Zap, Shield, Copy, Check, Terminal, Globe, Bot} from "lucide-react"
 import { useAccount, useSendTransaction, useBalance, useSwitchChain } from "wagmi"
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import { parseEther, formatEther } from "viem"
@@ -118,7 +118,6 @@ export default function App() {
   const [txStatus, setTxStatus] = useState("")
   const [agentOnline, setAgentOnline] = useState(false)
   const [selectedAgent, setSelectedAgent] = useState("defi-analyst")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [networkMode, setNetworkMode] = useState<"mainnet" | "testnet">("mainnet")
   const responseRef = useRef<HTMLDivElement>(null)
 
