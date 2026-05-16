@@ -14,7 +14,7 @@
     "cli": "cd sdk && npx tsx cli.ts",
     "start": "npm run agent",
     "agent": "npx tsx agents/server.ts",
-"agent:test": "npx tsx test-agent.ts"
+    "agent:test": "npx tsx test-agent.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
@@ -22,12 +22,12 @@
     "concurrently": "^8.0.0",
     "hardhat": "^2.22.0",
     "ts-node": "^10.9.2",
-    "tsx": "^4.0.0",
+    "tsx": "^4.22.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "cors": "^2.8.6",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.6.1",
     "ethers": "^6.0.0",
     "express": "^5.2.1",
     "viem": "^2.48.11"
